@@ -1,10 +1,26 @@
-import React,{useState} from 'react'
+import React,{useState,useEffect} from 'react'
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import useForm from './useForm';
-const UserProfile = () => {
-    const {inputs, handleInputChange, handleSubmit} = useForm({firstname:'',lastname:'',email:'',addressone:'',addresstwo:'',city:''});
-  
+
+const UserProfile = (props) => {
+   
+    const [firstname, setFirstname] = useState("");
+    const [lastname, setLastname] = useState("");
+    const [email, setEmail] = useState("");
+    const [addressone, setAddressone] = useState("");
+    const [addresstwo, setAddresstwo] = useState("");
+    const [city, setCity] = useState("");
+    const handleSubmit = (evt) => {
+        evt.preventDefault();
+        alert(`Submitting  ${firstname,lastname,email,addressone,addresstwo,city}`)
+    }
+    console.log(props.data)
+    // useEffect(()=>{
+        
+    //    console.log(props.data)
+         
+    // },[])
+
     return (
         <div>
             <form className="d-flex row col-md-12 mt-4" onSubmit={handleSubmit}>
@@ -12,8 +28,8 @@ const UserProfile = () => {
                 <TextField 
                 type="string"
                 label="First Name"
-                value={inputs.firstname}
-                onChange={handleInputChange}
+                value={firstname}
+                onChange={e => setFirstname(e.target.value)}
                 name="firstname"
                 />
                </div>
@@ -21,8 +37,8 @@ const UserProfile = () => {
                <TextField
                type="string"
                label="Name Name"
-               value={inputs.lastname}
-               onChange={handleInputChange}
+               value={lastname}
+               onChange={e => setLastname(e.target.value)}
                name="lastname"
                 />
                </div>
@@ -30,8 +46,8 @@ const UserProfile = () => {
                 <TextField
                 type="email"
                 label="Email"
-                value={inputs.email}
-                onChange={handleInputChange}
+                value={email}
+                onChange={e => setEmail(e.target.value)}
                 name="email"
                     />
                </div>
@@ -39,8 +55,8 @@ const UserProfile = () => {
                <TextField
                type="string"
                label="Adress1"
-               value={inputs.addressone}
-               onChange={handleInputChange}
+               value={addressone}
+               onChange={e => setAddressone(e.target.value)}
                name="addressone"
                 />
                </div>
@@ -48,8 +64,8 @@ const UserProfile = () => {
                <TextField 
                type="string"
                label="Adress2"
-               value={inputs.addresstwo}
-               onChange={handleInputChange}
+               value={addresstwo}
+               onChange={e => setAddresstwo(e.target.value)}
                name="addresstwo"
                />
                </div>
@@ -57,8 +73,8 @@ const UserProfile = () => {
                <TextField 
                type="string"
                label="City"
-               value={inputs.city}
-               onChange={handleInputChange}
+               value={city}
+               onChange={e => setCity(e.target.value)}
                name="city"
                />
                </div>

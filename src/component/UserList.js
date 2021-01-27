@@ -2,11 +2,10 @@ import React,{useEffect,useState}from 'react'
 
 import Table from 'react-bootstrap/Table';
 const UserList = (props) => {
-   const [row, setRow] = useState([])
       
       const {data,handleChange} =props
     return (
-        <div className="table_border mt-4">
+        <div className="table_border mt-4 mx-5">
            <Table>
                   <thead>
                     <tr>
@@ -18,8 +17,8 @@ const UserList = (props) => {
                     </tr>
                     </thead>
                     <tbody>
-                    {data.map(a=><tr onClick={()=>handleChange(a)}>
-                        <td>{a.id}</td>
+                    {data.map(a=><tr key={a.id} onClick={()=>handleChange(a)}>
+                        <td >{a.id}</td>
                         <td>{a.first_name}</td>
                         <td>{a.last_name}</td>
                         <td>{a.email}</td>

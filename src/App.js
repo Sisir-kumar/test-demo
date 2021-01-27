@@ -1,7 +1,7 @@
 
 import './App.css';
 import { Switch ,Route,BrowserRouter as Router} from "react-router-dom";
-import AllWallet from './component/AllWallet';
+import AllWallet from './component/Home';
 import NewWallet from './component/NewWallet';
 import CheckBalance from './component/CheckBalance';
 import AddFunds from './component/AddFunds';
