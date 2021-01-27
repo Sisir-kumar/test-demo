@@ -15,7 +15,7 @@ const TopMenu = (props) => {
                     >
                         &#9776;
                     </span>
-                    <Nav className="menuItems flex-row flex-grow-1 justify-content-between mx-3">
+                    <Nav className="menuItems flex-row flex-grow-1 justify-content-between mx-5">
                         <Nav.Item>
                          <span><img src={Logo} width="50" alt="logo" /></span>
                         </Nav.Item>
